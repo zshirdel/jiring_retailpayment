@@ -25,7 +25,29 @@ public class Toolbox {
 	public static int g_days_in_month[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 	public static int j_days_in_month[] = { 31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29 };
 
-	/**convert object to Json */
+	// ****************************************************************//
+	// private static variables
+	// ****************************************************************//
+	private static double len = 365.24219879;
+	private static double base = 2346;
+
+	private static double greg_len = 365.2425;
+	private static double greg_origin_from_jalali_base = 629964;
+	private static String greg_month_names[] = { "", "Jan", "Feb", "Mar", "Apr", "May", "June", "Jul", "A ug", "Sep",
+			"Oct", "Nov", "Dec" };
+
+	private int _year;
+	private int _month;
+	private int _dayOfMonth;
+	private int _hour;
+	private int _minute;
+	private int _second;
+
+	private Calendar _gregorianCalendar;
+
+	private boolean _leap;
+
+	/** convert object to Json */
 	public String toJson(Object obj) {
 		Gson gson = new Gson();
 		// convert java object to JSON format
@@ -33,7 +55,7 @@ public class Toolbox {
 		return json;
 	}
 
-	/**
+	/************************************************************************
 	 * convertToGregorian method get Jalalli date object and return Gregorian
 	 * date string;
 	 */
@@ -135,5 +157,71 @@ public class Toolbox {
 		else
 			return 0;
 	}
+
+	/**************************************************************************
+	 * Converts specified gregorian date to persian date in form of (yyyy/mm/dd)
+	 */
+	public static String getPersianDate(int gregYear, int gregMonth, int gregDay) {
+		// passed days from Greg orig
+		double d = Math.ceil((gregYear - 1) * greg_len);
+		// passed days from jalali base
+		double d_j = d + greg_origin_from_jalali_base + getGregDayOfYear(gregYear, gregMonth, gregDay);
+
+		// first result! jalali year
+		double j_y = Math.ceil(d_j / len) - 2346;
+		// day of the year
+		double j_days_of_year = Math.floor(((d_j / len) - Math.floor(d_j / len)) * 365) + 1;
+
+		// System.out.println(j_days_of_year);
+		StringBuffer result = new StringBuffer();
+
+		result.append((int) j_y + "/" + (int) month(j_days_of_year) + "/" + (int) dayOfMonth(j_days_of_year));
+		return result.toString();
+	}
+
+	private static double getGregDayOfYear(double year, double month, double day) {
+		int greg_moneths_len[] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		boolean leap = false;
+		if (((year % 4) == 0) && (((year % 400) != 0)))
+			leap = true;
+		if (leap)
+			greg_moneths_len[2] = 29;
+		int sum = 0;
+		for (int i = 0; i < month; i++)
+			sum += greg_moneths_len[i];
+		return sum + day - 2;
+	}
+
+	private static double month(double day) {
+
+		if (day < 6 * 31)
+			return Math.ceil(day / 31);
+		else
+			return Math.ceil((day - 6 * 31) / 30) + 6;
+	}
+
+	private static double dayOfMonth(double day) {
+
+		double m = month(day);
+		if (m <= 6)
+			return day - 31 * (m - 1);
+		else
+			return day - (6 * 31) - (m - 7) * 30;
+	}
+
+	/**
+	 * Converts specified gregorian date to persian date in form of (yyyy/mm/dd)
+	 */
+	public static String getPersianDate(Date d) {
+		GregorianCalendar gc = new GregorianCalendar();
+		gc.setTime(d);
+		int year = gc.get(Calendar.YEAR);
+		return getPersianDate(year, (gc.get(Calendar.MONTH)) + 1, gc.get(Calendar.DAY_OF_MONTH));
+	}
+	
+	
+	/***********************************************************************
+	 * Encode method;
+	 */
 
 }
