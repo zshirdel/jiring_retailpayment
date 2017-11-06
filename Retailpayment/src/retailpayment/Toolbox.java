@@ -59,7 +59,7 @@ public class Toolbox {
 	 * convertToGregorian method get Jalalli date object and return Gregorian
 	 * date string;
 	 */
-	public String convertToGregorian(Date date) {
+	public Date convertToGregorian(Date date) {
 
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
@@ -74,7 +74,7 @@ public class Toolbox {
 	 * convertToGregorian method get Jalalli date string and return Gregorian
 	 * date string;
 	 */
-	public String convertToGregorian(String dateString) {
+	public Date convertToGregorian(String dateString) {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 		Date date = null;
 		try {
@@ -87,7 +87,7 @@ public class Toolbox {
 	}
 
 	/** This function performs the conversion of Jalali to Gregorian; */
-	public String getGregorianCalendar(int year, int month, int day) {
+	public Date getGregorianCalendar(int year, int month, int day) {
 		String date_gregorian = null;
 		int gy, gm, gd;
 		int jy, jm, jd;
@@ -148,7 +148,7 @@ public class Toolbox {
 		Date date = new GregorianCalendar(gy, gm, gd).getTime();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 		date_gregorian = dateFormat.format(date);
-		return date_gregorian;
+		return date;
 	}
 
 	private static int parsBooleanToInt(Boolean sample) {
