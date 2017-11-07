@@ -37,7 +37,7 @@ public class Person {
 	 * 
 	 * @return
 	 */
-	public String Profile() {
+	public String profile() {
 		return null;
 
 	}
@@ -47,7 +47,7 @@ public class Person {
 	 * 
 	 * @return
 	 */
-	public boolean Register(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
+	public boolean register(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
 			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
 			String description) {
 		
@@ -60,7 +60,7 @@ public class Person {
 	 * 
 	 * @return
 	 */
-	public boolean Edit(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
+	public boolean edit(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
 			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
 			String description) {
 		
@@ -75,7 +75,7 @@ public class Person {
 	 * @param date
 	 * @return
 	 */
-	public boolean LoginUpdate(Date date) {
+	public boolean loginUpdate(Date date) {
 		return false;
 
 	}

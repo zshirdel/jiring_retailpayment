@@ -30,7 +30,7 @@ public class Buyer extends Person {
 	 * @return
 	 */
 	@Override
-	public String Profile() {
+	public String profile() {
 		return null;
 
 	}
@@ -41,7 +41,7 @@ public class Buyer extends Person {
 	 * @return
 	 */
 	
-	public boolean Register(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
+	public boolean register(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
 			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
 			String description,int MSISDN,int PromoterId) {
 		
@@ -54,7 +54,7 @@ public class Buyer extends Person {
 	 * 
 	 * @return
 	 */
-	public boolean Edit(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
+	public boolean edit(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
 			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
 			String description,int MSISDN,int PromoterId) {
 		
@@ -70,7 +70,7 @@ public class Buyer extends Person {
 	 * @return
 	 */
 	@Override
-	public boolean LoginUpdate(Date date) {
+	public boolean loginUpdate(Date date) {
 		return false;
 
 	}

@@ -19,7 +19,7 @@ public class DbObject {
 	 * @return
 	 * @throws SQLException
 	 */
-	public boolean ExecuteNonQuery() throws SQLException {
+	public boolean executeNonQuery() throws SQLException {
 		conn = DriverManager.getConnection(URL);
 		PreparedStatement pstmt = (PreparedStatement) conn.prepareStatement("");
 		Statement stmt = conn.createStatement();
@@ -38,7 +38,7 @@ public class DbObject {
 	 * @return
 	 * @throws SQLException
 	 */
-	public boolean ExecuteReader() throws SQLException {
+	public boolean executeReader() throws SQLException {
 		conn = DriverManager.getConnection(URL);
 		Statement stmt = conn.createStatement();
 		PreparedStatement pstmt = (PreparedStatement) conn.prepareStatement("");
