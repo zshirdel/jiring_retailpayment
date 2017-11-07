@@ -32,7 +32,7 @@ public class Merchant extends Person {
 	 * @return
 	 */
 	@Override
-	public String profile() {
+	public List<String> profile(int userId) {
 		return null;
 
 	}

@@ -4,10 +4,11 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Person class is abstract
+ * Person class override by merchant,promoter and buyer classes
  * 
  * @author z.shirdel
- *
+ * @since 1396/8/16
+ * @category Actors
  */
 public class Person {
 	int userId;
@@ -15,69 +16,37 @@ public class Person {
 	String firstName;
 	String lastName;
 	Date lastLoginOn;
-	int applicationId;
-	String status;
-	String registerOn;
-	int nationalCode;
-	int accountNo;
+	Date registerOn;
+	String nationalCode;
+	String accountNo;
 	String IBAN;
 	String description;
 
-	enum Role {
+	enum StatusType {
+		Active, Deactive, Blocked, Notconfirmed
+	};
+
+	enum RoleType {
 		Merchant, Promoter, Buyer
 	};
 
-	public List list() {
+	public List<Person> list() {
 		return null;
+	};
 
-	}
-
-	/**
-	 * show your profile
-	 * 
-	 * @return
-	 */
-	public String profile() {
+	public List<Person> profile(int userId) {
 		return null;
+	};
 
-	}
-
-	/**
-	 * register and set your data
-	 * 
-	 * @return
-	 */
-	public boolean register(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
-			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
-			String description) {
-		
+	public boolean register(Person prsn) {
 		return false;
+	};
 
-	}
-
-	/**
-	 * edit your profile
-	 * 
-	 * @return
-	 */
-	public boolean edit(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
-			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
-			String description) {
-		
-		
+	public boolean edit(Person prsn) {
 		return false;
+	};
 
-	}
-
-	/**
-	 * last log in in app
-	 * 
-	 * @param date
-	 * @return
-	 */
-	public boolean loginUpdate(Date date) {
+	public boolean loginUpdate(int personid) {
 		return false;
-
-	}
-
+	};
 }
