@@ -3,17 +3,25 @@ package retailpayment;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Who receives money
+ * 
+ * @author z.shirdel
+ *
+ */
 public class Merchant extends Person {
 	int MSISDN;
 	int PromoterId;
 	int MerchantCode;
-	
+
 	/**
 	 * get promoter list
+	 * 
 	 * @return
 	 */
 	@Override
 	public List list() {
+
 		return null;
 
 	}
@@ -34,11 +42,11 @@ public class Merchant extends Person {
 	 * 
 	 * @return
 	 */
-	
+
 	public boolean Register(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
 			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
-			String description,int MSISDN,int PromoterId,int MerchantCode) {
-		
+			String description, int MSISDN, int PromoterId, int MerchantCode) {
+
 		return false;
 
 	}
@@ -50,9 +58,8 @@ public class Merchant extends Person {
 	 */
 	public boolean Edit(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
 			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
-			String description,int MSISDN,int PromoterId,int MerchantCode) {
-		
-		
+			String description, int MSISDN, int PromoterId, int MerchantCode) {
+
 		return false;
 
 	}
