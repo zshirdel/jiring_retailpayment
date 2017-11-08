@@ -15,6 +15,7 @@ public class Rules {
 	String value;
 	String Name;
 	String RoleId;
+
 	public List<Rules> list() {
 		return null;
 
@@ -47,9 +48,9 @@ public class Rules {
 	 * @return
 	 */
 	public boolean edit(Rules rls) {
-		this.title=rls.title;
-		this.value=rls.value;
-		
+		this.title = rls.title;
+		this.value = rls.value;
+
 		return false;
 
 	}

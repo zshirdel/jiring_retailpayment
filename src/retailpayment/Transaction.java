@@ -18,6 +18,7 @@ public class Transaction {
 	float Amount;
 	int MSISDN;
 	int ConfirmCode;
+	int ApplicationId;
 
 	enum PaymentType {
 	};

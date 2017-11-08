@@ -15,11 +15,11 @@ public class Promoter extends Person {
 	int Score;
 
 	/**
-	 * get merchant and buyer list who attracted them
+	 * get promoter list
 	 * 
 	 * @return
 	 */
-	
+
 	public List<Promoter> list() {
 
 		return null;
@@ -30,24 +30,28 @@ public class Promoter extends Person {
 	 * 
 	 * @return
 	 */
-	
+
 	public List<Promoter> profile(int prmtId) {
 
 		return null;
 	};
 
 	/**
-	 * register and set Promoter data
+	 * get merchant and buyer list who attracted them
 	 * 
 	 * @return
 	 */
 
-	public List<Merchant> myMerchantlist(int PromoterId) {
+	public List<Merchant> myMerchantList(int PromoterId) {
 
 		return null;
 	}
 
-	
+	public List<Buyer> myBuyerList(int PromoterId) {
+
+		return null;
+	}
+
 	public boolean register(Promoter prmt) {
 		this.Name = prmt.Name;
 		this.nickName = prmt.nickName;
@@ -58,7 +62,7 @@ public class Promoter extends Person {
 		this.MSISDN = prmt.MSISDN;
 		this.Score = 0;
 		this.Category = "1";
-		this.RoleId="Promoter";
+		this.RoleId = "Promoter";
 
 		return false;
 
@@ -80,11 +84,8 @@ public class Promoter extends Person {
 		this.Score = prmt.Score;
 		this.Category = prmt.Category;
 
-
 		return false;
 
 	}
-
-	
 
 }

@@ -18,7 +18,7 @@ public class Merchant extends Person {
 	int merchantCode;
 
 	/**
-	 * get promoter list
+	 * get merchant list
 	 * 
 	 * @return
 	 */
@@ -27,6 +27,18 @@ public class Merchant extends Person {
 
 		return null;
 
+	}
+
+	/**
+	 * get buyer list for every merchants
+	 * 
+	 * @param PromoterId
+	 * @return
+	 */
+
+	public List<Buyer> myBuyerList(int merchantId) {
+
+		return null;
 	}
 
 	/**
@@ -86,5 +98,4 @@ public class Merchant extends Person {
 	 * @return
 	 */
 
-	
 }

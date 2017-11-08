@@ -14,11 +14,11 @@ public class Buyer extends Person {
 	int promoterId;
 
 	/**
-	 * get merchant list
+	 * get Buyer list
 	 * 
 	 * @return
 	 */
-	
+
 	public List<Buyer> list() {
 
 		return null;
@@ -26,11 +26,22 @@ public class Buyer extends Person {
 	}
 
 	/**
+	 * get merchant list for every buyer
+	 * 
+	 * @param buyerId
+	 * @return
+	 */
+	public List<Merchant> myMerchantList(int buyerId) {
+
+		return null;
+	}
+
+	/**
 	 * show your profile
 	 * 
 	 * @return
 	 */
-	
+
 	public List<Buyer> profile(int buyerId) {
 
 		return null;
@@ -51,7 +62,7 @@ public class Buyer extends Person {
 		this.description = buyer.description;
 		this.MSISDN = buyer.MSISDN;
 		this.promoterId = buyer.promoterId;
-		this.RoleId="Buyer";
+		this.RoleId = "Buyer";
 
 		return false;
 
@@ -70,11 +81,9 @@ public class Buyer extends Person {
 		this.IBAN = buyer.IBAN;
 		this.description = buyer.description;
 		this.MSISDN = buyer.MSISDN;
-		
+
 		return false;
 
 	}
-
-	
 
 }
