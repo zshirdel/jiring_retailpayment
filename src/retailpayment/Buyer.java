@@ -18,8 +18,8 @@ public class Buyer extends Person {
 	 * 
 	 * @return
 	 */
-	@Override
-	public List<String> list() {
+	
+	public List<Buyer> list() {
 
 		return null;
 
@@ -30,8 +30,8 @@ public class Buyer extends Person {
 	 * 
 	 * @return
 	 */
-	@Override
-	public List<String> profile(int buyerId) {
+	
+	public List<Buyer> profile(int buyerId) {
 
 		return null;
 	};
@@ -43,18 +43,15 @@ public class Buyer extends Person {
 	 */
 
 	public boolean register(Buyer buyer) {
-		super.firstName = buyer.firstName;
-		super.lastName = buyer.lastName;
-		super.nickName = buyer.nickName;
-		super.nationalCode = buyer.nationalCode;
-		super.accountNo = buyer.accountNo;
-		super.IBAN = buyer.IBAN;
-		super.description = buyer.description;
+		this.Name = buyer.Name;
+		this.nickName = buyer.nickName;
+		this.nationalCode = buyer.nationalCode;
+		this.accountNo = buyer.accountNo;
+		this.IBAN = buyer.IBAN;
+		this.description = buyer.description;
 		this.MSISDN = buyer.MSISDN;
 		this.promoterId = buyer.promoterId;
-		// RoleType.Merchant;
-		Date date = new Date();
-		super.registerOn = date;
+		this.RoleId="Buyer";
 
 		return false;
 
@@ -66,32 +63,18 @@ public class Buyer extends Person {
 	 * @return
 	 */
 	public boolean edit(Buyer buyer) {
-		super.firstName = buyer.firstName;
-		super.lastName = buyer.lastName;
-		super.nickName = buyer.nickName;
-		super.nationalCode = buyer.nationalCode;
-		super.accountNo = buyer.accountNo;
-		super.IBAN = buyer.IBAN;
-		super.description = buyer.description;
+		this.Name = buyer.Name;
+		this.nickName = buyer.nickName;
+		this.nationalCode = buyer.nationalCode;
+		this.accountNo = buyer.accountNo;
+		this.IBAN = buyer.IBAN;
+		this.description = buyer.description;
 		this.MSISDN = buyer.MSISDN;
-
+		
 		return false;
 
 	}
 
-	/**
-	 * last log in in app
-	 * 
-	 * @param date
-	 * @return
-	 */
-	@Override
-	public boolean loginUpdate(int buyerId) {
-		Date date = new Date();
-		super.lastLoginOn = date;
-
-		return false;
-
-	}
+	
 
 }

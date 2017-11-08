@@ -19,11 +19,10 @@ public class Promoter extends Person {
 	 * 
 	 * @return
 	 */
-	@Override
-	public List<String> list() {
+	
+	public List<Promoter> list() {
 
 		return null;
-
 	}
 
 	/**
@@ -31,8 +30,8 @@ public class Promoter extends Person {
 	 * 
 	 * @return
 	 */
-	@Override
-	public List<String> profile(int poroId) {
+	
+	public List<Promoter> profile(int prmtId) {
 
 		return null;
 	};
@@ -43,20 +42,23 @@ public class Promoter extends Person {
 	 * @return
 	 */
 
-	public boolean register(Promoter poro) {
-		super.firstName = poro.firstName;
-		super.lastName = poro.lastName;
-		super.nickName = poro.nickName;
-		super.nationalCode = poro.nationalCode;
-		super.accountNo = poro.accountNo;
-		super.IBAN = poro.IBAN;
-		super.description = poro.description;
-		this.MSISDN = poro.MSISDN;
+	public List<Merchant> myMerchantlist(int PromoterId) {
+
+		return null;
+	}
+
+	
+	public boolean register(Promoter prmt) {
+		this.Name = prmt.Name;
+		this.nickName = prmt.nickName;
+		this.nationalCode = prmt.nationalCode;
+		this.accountNo = prmt.accountNo;
+		this.IBAN = prmt.IBAN;
+		this.description = prmt.description;
+		this.MSISDN = prmt.MSISDN;
 		this.Score = 0;
 		this.Category = "1";
-		// RoleType.Merchant;
-		Date date = new Date();
-		super.registerOn = date;
+		this.RoleId="Promoter";
 
 		return false;
 
@@ -67,36 +69,22 @@ public class Promoter extends Person {
 	 * 
 	 * @return
 	 */
-	public boolean edit(Promoter poro) {
-		super.firstName = poro.firstName;
-		super.lastName = poro.lastName;
-		super.nickName = poro.nickName;
-		super.nationalCode = poro.nationalCode;
-		super.accountNo = poro.accountNo;
-		super.IBAN = poro.IBAN;
-		super.description = poro.description;
-		this.MSISDN = poro.MSISDN;
-		this.Score = poro.Score;
-		this.Category = poro.Category;
-		// RoleType.Merchant;
+	public boolean edit(Promoter prmt) {
+		this.Name = prmt.Name;
+		this.nickName = prmt.nickName;
+		this.nationalCode = prmt.nationalCode;
+		this.accountNo = prmt.accountNo;
+		this.IBAN = prmt.IBAN;
+		this.description = prmt.description;
+		this.MSISDN = prmt.MSISDN;
+		this.Score = prmt.Score;
+		this.Category = prmt.Category;
+
 
 		return false;
 
 	}
 
-	/**
-	 * last log in in app
-	 * 
-	 * @param date
-	 * @return
-	 */
-	@Override
-	public boolean loginUpdate(int poroId) {
-		Date date = new Date();
-		super.lastLoginOn = date;
-		
-		return false;
-
-	}
+	
 
 }

@@ -13,8 +13,14 @@ public class Rules {
 	int userId;
 	String title;
 	String value;
+	String Name;
+	String RoleId;
+	public List<Rules> list() {
+		return null;
 
-	public List<String> list() {
+	}
+
+	public List<Rules> myRuleslist(int userId) {
 		return null;
 
 	}
@@ -40,7 +46,9 @@ public class Rules {
 	 * @param RuleId
 	 * @return
 	 */
-	public boolean edit(int RuleId) {
+	public boolean edit(Rules rls) {
+		this.title=rls.title;
+		this.value=rls.value;
 		
 		return false;
 
@@ -52,12 +60,12 @@ public class Rules {
 	 * @param RuleId
 	 * @return
 	 */
-	public boolean remove(int RuleId) {
+	public boolean remove(int ruleId) {
 		return false;
 
 	}
 
-	public boolean profile() {
+	public boolean profile(int ruleId) {
 		return false;
 
 	}

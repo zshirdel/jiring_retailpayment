@@ -14,6 +14,8 @@ public class Feedback {
 	int userId;
 	Date registerOn;
 	String comment;
+	String Name;
+	String NickName;
 
 	/**
 	 * add feedback
@@ -24,9 +26,6 @@ public class Feedback {
 		this.feedbackId = feedback.feedbackId;
 		this.userId = feedback.userId;
 		this.comment = feedback.comment;
-		Date date = new Date();
-		this.registerOn = date;
-
 		return false;
 	}
 

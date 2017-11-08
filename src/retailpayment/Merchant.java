@@ -22,8 +22,8 @@ public class Merchant extends Person {
 	 * 
 	 * @return
 	 */
-	@Override
-	public List<String> list() {
+
+	public List<Merchant> list() {
 
 		return null;
 
@@ -34,7 +34,8 @@ public class Merchant extends Person {
 	 * 
 	 * @return
 	 */
-	public List<String> profile(int merchId) {
+
+	public List<Merchant> profile(int merchId) {
 
 		return null;
 	};
@@ -46,22 +47,18 @@ public class Merchant extends Person {
 	 */
 
 	public boolean register(Merchant merch) {
-		super.firstName = merch.firstName;
-		super.lastName = merch.lastName;
-		super.nickName = merch.nickName;
-		super.nationalCode = merch.nationalCode;
-		super.accountNo = merch.accountNo;
-		super.IBAN = merch.IBAN;
-		super.description = merch.description;
+
+		this.Name = merch.Name;
+		this.nickName = merch.nickName;
+		this.nationalCode = merch.nationalCode;
+		this.accountNo = merch.accountNo;
+		this.IBAN = merch.IBAN;
+		this.description = merch.description;
 		this.MSISDN = merch.MSISDN;
 		this.merchantCode = merch.merchantCode;
 		this.promoterId = merch.promoterId;
-		// RoleType.Merchant;
-		Date date = new Date();
-		super.registerOn = date;
-
+		this.RoleId = "Merchant";
 		return false;
-
 	}
 
 	/**
@@ -70,17 +67,15 @@ public class Merchant extends Person {
 	 * @return
 	 */
 	public boolean edit(Merchant merch) {
-		super.firstName = merch.firstName;
-		super.lastName = merch.lastName;
-		super.nickName = merch.nickName;
-		super.nationalCode = merch.nationalCode;
-		super.accountNo = merch.accountNo;
-		super.IBAN = merch.IBAN;
-		super.description = merch.description;
+		this.Name = merch.Name;
+		this.nickName = merch.nickName;
+		this.nationalCode = merch.nationalCode;
+		this.accountNo = merch.accountNo;
+		this.IBAN = merch.IBAN;
+		this.description = merch.description;
 		this.MSISDN = merch.MSISDN;
 		this.merchantCode = merch.merchantCode;
-
-		return false;
+		return true;
 
 	}
 
@@ -90,14 +85,6 @@ public class Merchant extends Person {
 	 * @param date
 	 * @return
 	 */
-	@Override
-	public boolean loginUpdate(int merchId) {
-		// DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-		Date date = new Date();
-		// System.out.println(dateFormat.format(date)); //2016/11/16 12:08:43
-		super.lastLoginOn = date;
-		return false;
 
-	}
-
+	
 }
