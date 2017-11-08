@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Who receives money
+ * person Who receives money
  * 
  * @author z.shirdel
  *
@@ -52,6 +52,8 @@ public class Merchant extends Person {
 		super.description = merch.description;
 		this.MSISDN = merch.MSISDN;
 		this.merchantCode = merch.merchantCode;
+		this.promoterId = merch.promoterId;
+		//RoleType.Merchant;
 
 		return false;
 
@@ -84,7 +86,7 @@ public class Merchant extends Person {
 	 * @return
 	 */
 	@Override
-	public boolean loginUpdate(int merchid) {
+	public boolean loginUpdate(int merchId) {
 		return false;
 
 	}

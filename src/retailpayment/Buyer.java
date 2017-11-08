@@ -11,15 +11,16 @@ import java.util.List;
  */
 public class Buyer extends Person {
 	int MSISDN;
-	int PromoterId;
+	int promoterId;
 
 	/**
 	 * get merchant list
+	 * 
 	 * @return
 	 */
 	@Override
-	public List list() {
-	
+	public List<String> list() {
+
 		return null;
 
 	}
@@ -30,21 +31,28 @@ public class Buyer extends Person {
 	 * @return
 	 */
 	@Override
-	public List<String> profile(int userId) {
-		return null;
+	public List<String> profile(int buyerId) {
 
-	}
+		return null;
+	};
 
 	/**
 	 * register and set Buyer data
 	 * 
 	 * @return
 	 */
-	
-	public boolean register(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
-			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
-			String description,int MSISDN,int PromoterId) {
-		
+
+	public boolean register(Buyer buyer) {
+		super.firstName = buyer.firstName;
+		super.lastName = buyer.lastName;
+		super.nickName = buyer.nickName;
+		super.nationalCode = buyer.nationalCode;
+		super.accountNo = buyer.accountNo;
+		super.IBAN = buyer.IBAN;
+		super.description = buyer.description;
+		this.MSISDN = buyer.MSISDN;
+		this.promoterId = buyer.promoterId;
+
 		return false;
 
 	}
@@ -54,11 +62,16 @@ public class Buyer extends Person {
 	 * 
 	 * @return
 	 */
-	public boolean edit(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
-			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
-			String description,int MSISDN,int PromoterId) {
-		
-		
+	public boolean edit(Buyer buyer) {
+		super.firstName = buyer.firstName;
+		super.lastName = buyer.lastName;
+		super.nickName = buyer.nickName;
+		super.nationalCode = buyer.nationalCode;
+		super.accountNo = buyer.accountNo;
+		super.IBAN = buyer.IBAN;
+		super.description = buyer.description;
+		this.MSISDN = buyer.MSISDN;
+
 		return false;
 
 	}
@@ -70,7 +83,7 @@ public class Buyer extends Person {
 	 * @return
 	 */
 	@Override
-	public boolean loginUpdate(Date date) {
+	public boolean loginUpdate(int buyerId) {
 		return false;
 
 	}
