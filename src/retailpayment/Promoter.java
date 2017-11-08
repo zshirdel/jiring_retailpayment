@@ -20,7 +20,7 @@ public class Promoter extends Person {
 	 * @return
 	 */
 	@Override
-	public List list() {
+	public List<String> list() {
 
 		return null;
 
@@ -32,10 +32,10 @@ public class Promoter extends Person {
 	 * @return
 	 */
 	@Override
-	public List<String> profile(int userId) {
-		return null;
+	public List<String> profile(int poroId) {
 
-	}
+		return null;
+	};
 
 	/**
 	 * register and set Promoter data
@@ -43,9 +43,18 @@ public class Promoter extends Person {
 	 * @return
 	 */
 
-	public boolean register(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
-			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
-			String description, int MSISDN, String Category, int Score) {
+	public boolean register(Promoter poro) {
+		super.firstName = poro.firstName;
+		super.lastName = poro.lastName;
+		super.nickName = poro.nickName;
+		super.nationalCode = poro.nationalCode;
+		super.accountNo = poro.accountNo;
+		super.IBAN = poro.IBAN;
+		super.description = poro.description;
+		this.MSISDN = poro.MSISDN;
+		this.Score=0;
+		this.Category="1";
+		//RoleType.Merchant;
 
 		return false;
 
@@ -56,9 +65,18 @@ public class Promoter extends Person {
 	 * 
 	 * @return
 	 */
-	public boolean edit(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
-			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
-			String description, int MSISDN, String Category, int Score) {
+	public boolean edit(Promoter poro) {
+		super.firstName = poro.firstName;
+		super.lastName = poro.lastName;
+		super.nickName = poro.nickName;
+		super.nationalCode = poro.nationalCode;
+		super.accountNo = poro.accountNo;
+		super.IBAN = poro.IBAN;
+		super.description = poro.description;
+		this.MSISDN = poro.MSISDN;
+		this.Score=poro.Score;
+		this.Category=poro.Category;
+		//RoleType.Merchant;
 
 		return false;
 
@@ -71,7 +89,7 @@ public class Promoter extends Person {
 	 * @return
 	 */
 	@Override
-	public boolean loginUpdate(Date date) {
+	public boolean loginUpdate(int poroId) {
 		return false;
 
 	}
