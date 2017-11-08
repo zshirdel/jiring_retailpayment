@@ -52,9 +52,11 @@ public class Promoter extends Person {
 		super.IBAN = poro.IBAN;
 		super.description = poro.description;
 		this.MSISDN = poro.MSISDN;
-		this.Score=0;
-		this.Category="1";
-		//RoleType.Merchant;
+		this.Score = 0;
+		this.Category = "1";
+		// RoleType.Merchant;
+		Date date = new Date();
+		super.registerOn = date;
 
 		return false;
 
@@ -74,9 +76,9 @@ public class Promoter extends Person {
 		super.IBAN = poro.IBAN;
 		super.description = poro.description;
 		this.MSISDN = poro.MSISDN;
-		this.Score=poro.Score;
-		this.Category=poro.Category;
-		//RoleType.Merchant;
+		this.Score = poro.Score;
+		this.Category = poro.Category;
+		// RoleType.Merchant;
 
 		return false;
 
@@ -90,6 +92,9 @@ public class Promoter extends Person {
 	 */
 	@Override
 	public boolean loginUpdate(int poroId) {
+		Date date = new Date();
+		super.lastLoginOn = date;
+		
 		return false;
 
 	}

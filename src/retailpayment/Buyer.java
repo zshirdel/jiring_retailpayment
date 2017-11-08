@@ -52,6 +52,9 @@ public class Buyer extends Person {
 		super.description = buyer.description;
 		this.MSISDN = buyer.MSISDN;
 		this.promoterId = buyer.promoterId;
+		// RoleType.Merchant;
+		Date date = new Date();
+		super.registerOn = date;
 
 		return false;
 
@@ -84,6 +87,9 @@ public class Buyer extends Person {
 	 */
 	@Override
 	public boolean loginUpdate(int buyerId) {
+		Date date = new Date();
+		super.lastLoginOn = date;
+
 		return false;
 
 	}

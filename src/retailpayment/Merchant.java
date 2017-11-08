@@ -1,6 +1,9 @@
 package retailpayment;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -53,7 +56,9 @@ public class Merchant extends Person {
 		this.MSISDN = merch.MSISDN;
 		this.merchantCode = merch.merchantCode;
 		this.promoterId = merch.promoterId;
-		//RoleType.Merchant;
+		// RoleType.Merchant;
+		Date date = new Date();
+		super.registerOn = date;
 
 		return false;
 
@@ -87,6 +92,10 @@ public class Merchant extends Person {
 	 */
 	@Override
 	public boolean loginUpdate(int merchId) {
+		// DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+		Date date = new Date();
+		// System.out.println(dateFormat.format(date)); //2016/11/16 12:08:43
+		super.lastLoginOn = date;
 		return false;
 
 	}

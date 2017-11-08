@@ -1,6 +1,7 @@
 package retailpayment;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * get feedback from users
@@ -19,12 +20,17 @@ public class Feedback {
 	 * 
 	 * @return
 	 */
-	public boolean add() {
+	public boolean add(Feedback feedback) {
+		this.FeedbackId = feedback.FeedbackId;
+		this.UserId = feedback.UserId;
+		this.RegisterOn = feedback.RegisterOn;
+		this.Comment = feedback.Comment;
+
 		return false;
 	}
 
-	public boolean list() {
-		return false;
+	public List<Feedback> list() {
+		return null;
 
 	}
 
