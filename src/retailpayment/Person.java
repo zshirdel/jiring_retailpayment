@@ -30,11 +30,11 @@ public class Person {
 		Merchant, Promoter, Buyer
 	};
 
-	public List<Person> list() {
+	public List<String> list() {
 		return null;
 	};
 
-	public List<Person> profile(int userId) {
+	public List<String> profile(int userId) {
 		return null;
 	};
 

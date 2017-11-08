@@ -11,8 +11,8 @@ import java.util.List;
  */
 public class Merchant extends Person {
 	int MSISDN;
-	int PromoterId;
-	int MerchantCode;
+	int promoterId;
+	int merchantCode;
 
 	/**
 	 * get promoter list
@@ -20,7 +20,7 @@ public class Merchant extends Person {
 	 * @return
 	 */
 	@Override
-	public List list() {
+	public List<String> list() {
 
 		return null;
 
@@ -31,11 +31,10 @@ public class Merchant extends Person {
 	 * 
 	 * @return
 	 */
-	@Override
-	public List<String> profile(int userId) {
-		return null;
+	public List<String> profile(int merchId) {
 
-	}
+		return null;
+	};
 
 	/**
 	 * register and set Merchant data
@@ -43,9 +42,16 @@ public class Merchant extends Person {
 	 * @return
 	 */
 
-	public boolean register(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
-			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
-			String description, int MSISDN, int PromoterId, int MerchantCode) {
+	public boolean register(Merchant merch) {
+		super.firstName = merch.firstName;
+		super.lastName = merch.lastName;
+		super.nickName = merch.nickName;
+		super.nationalCode = merch.nationalCode;
+		super.accountNo = merch.accountNo;
+		super.IBAN = merch.IBAN;
+		super.description = merch.description;
+		this.MSISDN = merch.MSISDN;
+		this.merchantCode = merch.merchantCode;
 
 		return false;
 
@@ -56,9 +62,16 @@ public class Merchant extends Person {
 	 * 
 	 * @return
 	 */
-	public boolean edit(int userId, String nickName, String firstName, String lastName, Date lastLoginOn,
-			int applicationId, String status, String registerOn, int nationalCode, int accountNo, String IBAN,
-			String description, int MSISDN, int PromoterId, int MerchantCode) {
+	public boolean edit(Merchant merch) {
+		super.firstName = merch.firstName;
+		super.lastName = merch.lastName;
+		super.nickName = merch.nickName;
+		super.nationalCode = merch.nationalCode;
+		super.accountNo = merch.accountNo;
+		super.IBAN = merch.IBAN;
+		super.description = merch.description;
+		this.MSISDN = merch.MSISDN;
+		this.merchantCode = merch.merchantCode;
 
 		return false;
 
@@ -71,7 +84,7 @@ public class Merchant extends Person {
 	 * @return
 	 */
 	@Override
-	public boolean loginUpdate(Date date) {
+	public boolean loginUpdate(int merchid) {
 		return false;
 
 	}
