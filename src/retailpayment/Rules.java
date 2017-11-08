@@ -9,10 +9,10 @@ import java.util.List;
  *
  */
 public class Rules {
-	int RuleId;
-	int UserId;
-	String Title;
-	String Value;
+	int ruleId;
+	int userId;
+	String title;
+	String value;
 
 	public List<String> list() {
 		return null;
@@ -24,7 +24,12 @@ public class Rules {
 	 * 
 	 * @return
 	 */
-	public boolean add() {
+	public boolean add(Rules rule) {
+		this.ruleId = rule.ruleId;
+		this.userId = rule.userId;
+		this.title = rule.title;
+		this.value = rule.value;
+
 		return false;
 
 	}
@@ -36,6 +41,7 @@ public class Rules {
 	 * @return
 	 */
 	public boolean edit(int RuleId) {
+		
 		return false;
 
 	}

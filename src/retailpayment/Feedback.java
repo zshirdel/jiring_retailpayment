@@ -10,10 +10,10 @@ import java.util.List;
  *
  */
 public class Feedback {
-	int FeedbackId;
-	int UserId;
-	Date RegisterOn;
-	String Comment;
+	int feedbackId;
+	int userId;
+	Date registerOn;
+	String comment;
 
 	/**
 	 * add feedback
@@ -21,10 +21,11 @@ public class Feedback {
 	 * @return
 	 */
 	public boolean add(Feedback feedback) {
-		this.FeedbackId = feedback.FeedbackId;
-		this.UserId = feedback.UserId;
-		this.RegisterOn = feedback.RegisterOn;
-		this.Comment = feedback.Comment;
+		this.feedbackId = feedback.feedbackId;
+		this.userId = feedback.userId;
+		this.comment = feedback.comment;
+		Date date = new Date();
+		this.registerOn = date;
 
 		return false;
 	}
